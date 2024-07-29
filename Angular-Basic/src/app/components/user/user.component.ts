@@ -14,10 +14,15 @@ export class UserComponent implements OnInit {
 private _user: any;
 
 constructor(private cdr: ChangeDetectorRef){
-  
+
 }
 ngOnInit(){
-  // console.log('ngOnInit :', this.user );  
+  // console.log('ngOnInit :', this.user );
+  // setTimeout(()=>{
+  //   console.log('Name must be changed')
+  //   this.user.first_name="New Name"
+  //   //this.cdr.detectChanges();
+  // }, 2000)
 }
 ngOnChanges(changes: SimpleChanges){
   console.log('ngOnChanges OnPush', changes);
@@ -25,7 +30,7 @@ ngOnChanges(changes: SimpleChanges){
   //   const change = changes['user'];
   //   console.log('Previous value:', change.previousValue);
   //   console.log('Current value:', change.currentValue);
-  // } 
+  // }
 }
  changeName(){
   this.newName.emit(this.user)
