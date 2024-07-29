@@ -1,0 +1,9 @@
+<div class="list-container">
+    <ng-container *ngFor='let currentUser of usersList'>
+        <app-user 
+            [user]="currentUser" 
+            (newName)="setNewName($event)"
+        ></app-user>
+        <button (click)="change(currentUser)"> Parent changes</button>
+    </ng-container>
+</div>

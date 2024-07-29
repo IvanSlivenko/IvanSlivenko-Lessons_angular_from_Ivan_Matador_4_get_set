@@ -1,0 +1,17 @@
+{
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "\"javascript\"": "\"javascriptreact\"",
+        "\"plaintext\"": "\"html\"",
+        "vue-html": "html"
+    },
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "xml": {
+            "attr_quotes": "single"
+    }
+    },
+    "emmet.variables": {
+        "lang": "en"
+    }
+}

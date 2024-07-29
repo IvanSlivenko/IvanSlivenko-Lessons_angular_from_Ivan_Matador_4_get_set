@@ -1,0 +1,180 @@
+-------------------------------------Part 1
+https://youtu.be/MwBYVKYSqdM
+
+1
+install node.js in windows from oficial site
+
+2
+open git bash
+
+3
+install global angular
+npm install -g @angular/cli
+
+4
+ng -- help
+
+-> list commands angular
+
+5------------------------------------------------------ !!!!!!!!!!!!!!!!!!!!!!!!!
+ng new Angular-Basic --no-standalone --routing 
+
+6
+src-> app-> app.component.html
+ctrl+a
+del
+-------------------------------------------------- Part 2
+https://youtu.be/RXKZqMwqC78
+
+7
+src-> app :
+create folder new
+in folder new create file new.component.ts
+
+8
+ng generate component components/new
+or
+ng g c components/new2
+
+9
+all files .css rename to .scss
+
+10
+in file
+angular.json find all text == .css and rename this text to .scss
+
+"projects": {
+    "Angular-Basic": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false,
+          "style": "scss"---------------------------------!!!!!!!!!!!!!!!!!!!
+        },
+
+11
+strukture derektive:
+..................................................................................... ngIf
+<p *ngIf="isParagraphVisible">
+    Lorem ipsum dolor sit amet consectetur,<br> 
+    adipisicing elit. Culpa adipisci quidem animi<br> 
+    pariatur molestias. Esse ab modi amet beatae <br>
+    aspernatur consequuntur dolore nihil <br>
+    inventore tempora.
+</p>
+
+12
+event DOM
+<h1 (click)="isParagraphVisible = !isParagraphVisible; show()"> test ({{ title }}) </h1>
+
+............................................................................................... ngFor
+*ngFor=""
+ <ul *ngIf="!isParagraphVisible" >
+        <li *ngFor="let item of list; index as id">
+            {{ item + ' with id: '+id }}
+        </li>
+    </ul>
+
+..................................
+<ng-container>
+            
+</ng-container>    
+
+................................................................................................. ngSwitch->ngSwitchCase
+<ng-container *ngFor="let user of roles; index as idx">
+        <div [ngSwitch]="user.role">
+            <div *ngSwitchCase="'admin'"> {{ idx+1 }}. Вітаю, ви зайшли, як адмін ({{user.text}}) </div>
+            <div *ngSwitchCase="'user'">{{ idx+1 }}. Вітаю, ви зайшли, як юзер ({{user.text}})</div>
+            <div *ngSwitchCase="'customer'">{{ idx+1}}. Вітаю, ви зайшли, як клієнт ({{user.text}})</div>   
+        </div>
+</ng-container>
+
+13
+atribute derektive
+.................................................................................................................ngStyle
+<ng-container *ngFor="let user of roles; index as idx">
+        <div [ngStyle]="{'color' : user.role === 'admin' ? 'green' : user.role === 'user' ? 'blue' : 'red' }">
+            {{ idx+1 }}. Вітаю,
+        </div>
+    </ng-container>
+
+...............................................................
+<ng-container *ngFor="let user of roles; index as idx">
+        <div [ngStyle]="{'color' : getColor(user) }">
+            {{ idx+1 }}. Вітаю,
+        </div>
+</ng-container>  
+
+....................................................................... inreface
+export interface Role{
+  role: string,
+  text: string
+}
+........................................................................ngClass
+<ng-container *ngFor="let user of roles; index as idx">
+        <div [ngStyle]="{'color' : getColor(user) }" [ngClass]="{'admin': user.role === 'admin'}">
+            {{ idx+1 }}. Вітаю,
+        </div>
+    </ng-container>
+
+
+------------------------------------------------------------------------------------------
+
+14
+format date
+add method 
+getDate(){
+    return new Date()
+}
+
+<h1 > 
+        test ({{ title |lowercase}}) {{ getDate() |date:'dd:MM:YYYY ( hh:mm )'}}
+    </h1>
+
+---------------------------------------------------------------------------------------------  Part 3
+
+https://youtu.be/ts0Efpm-aSk
+
+15 
+
+ng new Angular-Basic --no-standalone --routing --style=scss
+
+16
+input()
+---------------------------------------
+parent component - app.component.ts
+export class AppComponent {
+  title = 'Angular-Basic';
+}
+---------------------------------------
+-----------------------------------------------------
+childrencomponent - show-title.component.ts
+export class ShowTitleComponent implements OnInit {
+  @Input() incomingTitle!:string;
+  ngOnInit(){
+    console.log('ngOnInit :', this.incomingTitle );
+    
+  }
+}
+------------------------------------------------------
+output()
+
+-------------------------------------------------------- Part 4
+
+https://youtu.be/CzS1PEAF-KE
+
+https://reqres.in/
+
+
+17
+ng g i interfaces/returnData
+
+ng g i interfaces/user
+
+------------------------------------------------------ Part 5
+https://youtu.be/SPI0Rmk_XbQ
+
+
+
+
+09 : 50
